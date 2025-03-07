@@ -18,7 +18,6 @@ function App() {
       <div className="min-h-screen bg-light">
         <Navbar />
         <div className="pt-16">
-          {" "}
           {/* Add padding to account for fixed navbar */}
           <Routes>
             <Route path="/" element={<HomePage />} />

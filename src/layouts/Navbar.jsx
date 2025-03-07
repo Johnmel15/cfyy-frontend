@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation(); // Get current location
 
   const navLinks = [
     { title: "Home", path: "/" },
@@ -13,15 +14,23 @@ const Navbar = () => {
     { title: "Contact Us", path: "/contact-us" },
   ];
 
+  const isActiveLink = (path) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.startsWith(path);
+  };
+
   return (
     <nav className="bg-white shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <span className="text-primary text-2xl font-bold">
-                Care 4 You & Yours
-              </span>
+              {/* <span className="text-primary text-2xl font-bold">
+                
+              </span> */}
+              <img src="/images/cfyy.png" alt="logo" className="w-[120px]" />
             </Link>
           </div>
 
@@ -31,7 +40,13 @@ const Navbar = () => {
               <Link
                 key={link.title}
                 to={link.path}
-                className="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200"
+                className={`px-3 py-2 text-sm font-medium transition-colors duration-200
+                  ${
+                    isActiveLink(link.path)
+                      ? "text-primary font-bold" // Active state
+                      : "text-gray-700 hover:text-primary" // Inactive state
+                  }
+                `}
               >
                 {link.title}
               </Link>
@@ -58,7 +73,13 @@ const Navbar = () => {
               <Link
                 key={link.title}
                 to={link.path}
-                className="text-gray-700 hover:text-primary block px-3 py-2 text-base font-medium"
+                className={`block px-3 py-2 text-base font-medium
+                  ${
+                    isActiveLink(link.path)
+                      ? "text-primary font-bold" // Active state
+                      : "text-gray-700 hover:text-primary" // Inactive state
+                  }
+                `}
                 onClick={() => setIsOpen(false)}
               >
                 {link.title}

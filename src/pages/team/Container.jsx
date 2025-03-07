@@ -7,7 +7,9 @@ const Team = () => {
       {departments.map((dept, index) => (
         <section
           key={index}
-          className={`py-16 ${index % 2 === 0 ? "bg-white" : "bg-light"}`}
+          className={`py-16 pt-[120px] ${
+            index % 2 === 0 ? "bg-white" : "bg-light"
+          }`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -66,14 +68,14 @@ const departments = [
     name: "Primary Care Physicians",
     members: [
       {
-        name: "Dr. Sarah Johnson",
+        name: "Dr. John Johnson",
         role: "Chief Medical Officer",
         specialization: "Family Medicine",
         image: "/images/team/dr1.jpg",
         bio: "Dr. Johnson has over 15 years of experience in family medicine and preventive care.",
         contact: {
           linkedin: "#",
-          email: "sarah.johnson@healthcare.com",
+          email: "john.johnson@healthcare.com",
           phone: "+1234567890",
         },
       },

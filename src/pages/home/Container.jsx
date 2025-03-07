@@ -1,8 +1,52 @@
 import { Link } from "react-router-dom";
-import { FaUserMd, FaHospital, FaAmbulance, FaClock } from "react-icons/fa";
-import Testimonials from "./components/Testimonials";
+import {
+  FaUserMd,
+  FaHospital,
+  FaAmbulance,
+  FaClock,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { BrandsSection, TestimonialSection } from "./components";
+
+const heroImages = [
+  {
+    src: "/images/hero-image.png",
+    alt: "Healthcare professionals at work",
+  },
+  {
+    src: "/images/hero-image-2.png",
+    alt: "Caring nurse with patient",
+  },
+  {
+    src: "/images/hero-image-3.png",
+    alt: "Modern medical facility",
+  },
+];
 
 const Home = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Auto-play functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage(
+      (prev) => (prev - 1 + heroImages.length) % heroImages.length
+    );
+  };
+
   return (
     <div>
       {/* Hero Section */}
@@ -24,18 +68,61 @@ const Home = () => {
                 Lets Get Started
               </Link>
             </div>
-            <div className="md:w-1/2">
-              <img
-                src="/images/hero-image.png" // You'll need to add this image to your public folder
-                alt="Healthcare professionals"
-              />
+            <div className="md:w-1/2 relative">
+              {/* Image Carousel */}
+              <div className="relative overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentImage * 100}%)` }}
+                >
+                  {heroImages.map((image, index) => (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      className="w-full h-[400px] object-contain flex-shrink-0"
+                    />
+                  ))}
+                </div>
+
+                {/* Navigation Buttons */}
+                <button
+                  onClick={prevImage}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition duration-300"
+                  aria-label="Previous image"
+                >
+                  <FaChevronLeft className="text-primary w-4 h-4" />
+                </button>
+
+                <button
+                  onClick={nextImage}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full hover:bg-white transition duration-300"
+                  aria-label="Next image"
+                >
+                  <FaChevronRight className="text-primary w-4 h-4" />
+                </button>
+
+                {/* Dots Indicator */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                  {heroImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImage(index)}
+                      className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                        currentImage === index ? "bg-white" : "bg-white/50"
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
+      <BrandsSection />
       {/* Features Section */}
-      <section className="py-16 bg-light">
+      <section className="py-10 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard
@@ -81,7 +168,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Testimonials />
+      <TestimonialSection />
 
       {/* CTA Section */}
       <section className="bg-primary py-16">

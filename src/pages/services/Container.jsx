@@ -1,16 +1,10 @@
 import { FaArrowRight } from "react-icons/fa";
-import PageHeader from "../../components/PageHeader";
 
 const Services = () => {
   return (
     <div>
-      <PageHeader
-        title="Our Services"
-        description="Comprehensive healthcare solutions tailored to your needs"
-      />
-
       {/* Services Grid */}
-      <section className="py-16 bg-light">
+      <section className="py-16 bg-light pt-[120px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (

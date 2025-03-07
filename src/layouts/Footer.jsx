@@ -97,7 +97,10 @@ const Footer = () => {
               <p>Stay updated with our latest news and announcements</p>
             </div>
             <div className="lg:w-1/2">
-              <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="flex gap-2 flex-col lg:flex-row md:flex-row sm:flex-col"
+                onSubmit={(e) => e.preventDefault()}
+              >
                 <input
                   type="email"
                   placeholder="Enter your email"

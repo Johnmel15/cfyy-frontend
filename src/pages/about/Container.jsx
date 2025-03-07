@@ -1,16 +1,9 @@
 import { FaHeartbeat, FaAward, FaUsers, FaHospital } from "react-icons/fa";
-import PageHeader from "../../components/PageHeader";
-
 const About = () => {
   return (
     <div>
-      <PageHeader
-        title="About Us"
-        description="Leading the way in modern healthcare services"
-      />
-
       {/* Mission & Vision Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white pt-[120px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
