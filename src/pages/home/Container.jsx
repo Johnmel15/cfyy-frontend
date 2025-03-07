@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaUserMd, FaHospital, FaAmbulance, FaClock } from "react-icons/fa";
+import Testimonials from "./components/Testimonials";
 
 const Home = () => {
   return (
@@ -80,6 +81,8 @@ const Home = () => {
         </div>
       </section>
 
+      <Testimonials />
+
       {/* CTA Section */}
       <section className="bg-primary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -133,17 +136,17 @@ const services = [
   {
     title: "Primary Care",
     description: "Comprehensive health care services for patients of all ages.",
-    image: "/services/primary-care.jpg", // You'll need to add these images
+    image: "/images/services/service1.jpg", // You'll need to add these images
   },
   {
     title: "Specialized Treatment",
     description: "Expert care in various medical specialties and conditions.",
-    image: "/services/specialized.jpg",
+    image: "/images/services/service2.jpg",
   },
   {
     title: "Preventive Care",
     description: "Proactive health management and preventive services.",
-    image: "/services/preventive.jpg",
+    image: "/images/services/service2.jpg",
   },
 ];
 

@@ -70,32 +70,32 @@ const services = [
   {
     title: "Primary Care",
     description: "Comprehensive health services for patients of all ages.",
-    image: "/services/primary-care.jpg",
+    image: "/images/services/service2.jpg",
   },
   {
     title: "Emergency Care",
     description: "24/7 emergency medical services for urgent health needs.",
-    image: "/services/emergency.jpg",
+    image: "/images/services/service1.jpg",
   },
   {
     title: "Specialized Medicine",
     description: "Expert care in various medical specialties.",
-    image: "/services/specialized.jpg",
+    image: "/images/services/service2.jpg",
   },
   {
     title: "Diagnostic Services",
     description: "Advanced diagnostic testing and imaging services.",
-    image: "/services/diagnostic.jpg",
+    image: "/images/services/service1.jpg",
   },
   {
     title: "Preventive Care",
     description: "Regular check-ups and preventive health services.",
-    image: "/services/preventive.jpg",
+    image: "/images/services/service2.jpg",
   },
   {
     title: "Rehabilitation",
     description: "Physical therapy and rehabilitation programs.",
-    image: "/services/rehabilitation.jpg",
+    image: "/images/services/service1.jpg",
   },
 ];
 

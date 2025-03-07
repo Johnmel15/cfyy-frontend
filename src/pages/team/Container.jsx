@@ -69,7 +69,7 @@ const departments = [
         name: "Dr. Sarah Johnson",
         role: "Chief Medical Officer",
         specialization: "Family Medicine",
-        image: "/team/doctor-1.jpg",
+        image: "/images/team/dr1.jpg",
         bio: "Dr. Johnson has over 15 years of experience in family medicine and preventive care.",
         contact: {
           linkedin: "#",
@@ -87,7 +87,7 @@ const departments = [
         name: "Dr. Michael Chen",
         role: "Cardiologist",
         specialization: "Cardiovascular Medicine",
-        image: "/team/doctor-2.jpg",
+        image: "/images/team/dr2.jpg",
         bio: "Dr. Chen is a renowned cardiologist with expertise in advanced cardiac procedures.",
         contact: {
           linkedin: "#",
