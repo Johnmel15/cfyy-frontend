@@ -2,7 +2,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +28,7 @@ const Navbar = () => {
         <div className="flex justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Image
+              <img
                 src="/images/cfyy.png"
                 alt="logo"
                 width={120}
@@ -45,11 +44,11 @@ const Navbar = () => {
               <Link
                 key={link.title}
                 href={link.path}
-                className={`px-3 py-2 text-sm font-medium transition-colors duration-200
+                className={`px-3 py-2 text-[16px] transition-colors duration-200
                   ${
                     isActiveLink(link.path)
-                      ? "text-primary font-bold"
-                      : "text-gray-700 hover:text-primary"
+                      ? "text-primary-500 font-[700]"
+                      : "text-gray-700 hover:font-[700] hover:text-primary"
                   }
                 `}
               >

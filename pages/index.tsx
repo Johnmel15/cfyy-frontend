@@ -3,9 +3,9 @@ import { FC } from "react";
 
 const Container: FC = () => {
   return (
-    <div>
+    <>
       <HomeContainer />
-    </div>
+    </>
   );
 };
 

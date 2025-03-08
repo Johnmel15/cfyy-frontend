@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://caring4youandyours.com/sitemap.xml

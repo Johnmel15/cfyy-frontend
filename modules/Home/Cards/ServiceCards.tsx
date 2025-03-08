@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 
@@ -10,7 +11,14 @@ interface ServiceCardProps {
 const ServiceCards: FC<ServiceCardProps> = ({ title, description, image }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <Image
+        src={image}
+        alt={title}
+        width={800}
+        height={384}
+        className="w-full h-48 object-cover"
+        priority
+      />
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
