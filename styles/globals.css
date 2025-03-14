@@ -286,6 +286,54 @@
     image-rendering: crisp-edges;
   }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-fadeOut {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes linkClick {
+  0% {
+    transform: scale(1);
+    color: inherit;
+  }
+  50% {
+    transform: scale(1.1);
+    color: var(--color-secondary); /* Example color change */
+  }
+  100% {
+    transform: scale(1);
+    color: inherit;
+  }
+}
+
+.nav-link-click {
+  animation: linkClick 0.3s ease-out;
+}
 
 @font-face {
   font-family: 'Mulish';
