@@ -1,4 +1,5 @@
 import { brands } from "@/utils/brand-data";
+import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
@@ -29,9 +30,11 @@ const Brands = () => {
                 key={index}
                 className="flex items-center justify-center mx-8"
               >
-                <img
+                <Image
                   src={brand.icon}
                   alt={`${brand.name} logo`}
+                  width={800}
+                  height={384}
                   className="h-[6rem] w-auto grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </div>

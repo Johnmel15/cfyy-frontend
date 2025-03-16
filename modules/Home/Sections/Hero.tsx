@@ -1,4 +1,5 @@
 import { heroImages } from "@/utils/hero-images";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -51,11 +52,14 @@ const Hero = () => {
                 style={{ transform: `translateX(-${currentImage * 100}%)` }}
               >
                 {heroImages.map((image, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={image.src}
                     alt={image.alt}
+                    width={800}
+                    height={384}
                     className="w-full h-[400px] object-contain flex-shrink-0"
+                    priority
                   />
                 ))}
               </div>

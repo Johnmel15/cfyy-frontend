@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 
 interface ServiceCardProps {
@@ -53,7 +54,13 @@ const Container = () => {
 
 const ServiceCard = ({ title, description, image }: ServiceCardProps) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <Image
+      src={image}
+      alt={title}
+      width={800}
+      height={384}
+      className="w-full h-48 object-cover"
+    />
     <div className="p-6">
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>

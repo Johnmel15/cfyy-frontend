@@ -10,36 +10,280 @@
 }
 
 @layer utilities {
-  .text-primary {
+  /* Primary Text Colors - Light to Dark */
+  .text-primary-100 {
+    color: color-mix(in srgb, var(--color-primary) 10%, white);
+  }
+  .text-primary-200 {
+    color: color-mix(in srgb, var(--color-primary) 20%, white);
+  }
+  .text-primary-300 {
+    color: color-mix(in srgb, var(--color-primary) 40%, white);
+  }
+  .text-primary-400 {
+    color: color-mix(in srgb, var(--color-primary) 60%, white);
+  }
+  .text-primary-500 {
     color: var(--color-primary);
   }
+  .text-primary-600 {
+    color: color-mix(in srgb, var(--color-primary) 80%, black);
+  }
+  .text-primary-700 {
+    color: color-mix(in srgb, var(--color-primary) 60%, black);
+  }
+  .text-primary-800 {
+    color: color-mix(in srgb, var(--color-primary) 40%, black);
+  }
+  .text-primary-900 {
+    color: color-mix(in srgb, var(--color-primary) 20%, black);
+  }
 
-  .text-secondary {
+  /* Secondary Text Colors */
+  .text-secondary-100 {
+    color: color-mix(in srgb, var(--color-secondary) 10%, white);
+  }
+  .text-secondary-200 {
+    color: color-mix(in srgb, var(--color-secondary) 20%, white);
+  }
+  .text-secondary-300 {
+    color: color-mix(in srgb, var(--color-secondary) 40%, white);
+  }
+  .text-secondary-400 {
+    color: color-mix(in srgb, var(--color-secondary) 60%, white);
+  }
+  .text-secondary-500 {
     color: var(--color-secondary);
   }
-
-  .text-accent {
-    color: var(--color-accent);
+  .text-secondary-600 {
+    color: color-mix(in srgb, var(--color-secondary) 80%, black);
+  }
+  .text-secondary-700 {
+    color: color-mix(in srgb, var(--color-secondary) 60%, black);
+  }
+  .text-secondary-800 {
+    color: color-mix(in srgb, var(--color-secondary) 40%, black);
+  }
+  .text-secondary-900 {
+    color: color-mix(in srgb, var(--color-secondary) 20%, black);
   }
 
-  .text-light {
+  /* Accent Text Colors */
+  .text-accent-100 {
+    color: color-mix(in srgb, var(--color-accent) 10%, white);
+  }
+  .text-accent-200 {
+    color: color-mix(in srgb, var(--color-accent) 20%, white);
+  }
+  .text-accent-300 {
+    color: color-mix(in srgb, var(--color-accent) 40%, white);
+  }
+  .text-accent-400 {
+    color: color-mix(in srgb, var(--color-accent) 60%, white);
+  }
+  .text-accent-500 {
+    color: var(--color-accent);
+  }
+  .text-accent-600 {
+    color: color-mix(in srgb, var(--color-accent) 80%, black);
+  }
+  .text-accent-700 {
+    color: color-mix(in srgb, var(--color-accent) 60%, black);
+  }
+  .text-accent-800 {
+    color: color-mix(in srgb, var(--color-accent) 40%, black);
+  }
+  .text-accent-900 {
+    color: color-mix(in srgb, var(--color-accent) 20%, black);
+  }
+
+  /* Light Text Colors */
+  .text-light-100 {
+    color: color-mix(in srgb, var(--color-light) 10%, white);
+  }
+  .text-light-200 {
+    color: color-mix(in srgb, var(--color-light) 20%, white);
+  }
+  .text-light-300 {
+    color: color-mix(in srgb, var(--color-light) 40%, white);
+  }
+  .text-light-400 {
+    color: color-mix(in srgb, var(--color-light) 60%, white);
+  }
+  .text-light-500 {
+    color: var(--color-light);
+  }
+  .text-light-600 {
+    color: color-mix(in srgb, var(--color-light) 80%, black);
+  }
+  .text-light-700 {
+    color: color-mix(in srgb, var(--color-light) 60%, black);
+  }
+  .text-light-800 {
+    color: color-mix(in srgb, var(--color-light) 40%, black);
+  }
+  .text-light-900 {
+    color: color-mix(in srgb, var(--color-light) 20%, black);
+  }
+
+  /* Background Colors */
+  .bg-primary-100 {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, white);
+  }
+  .bg-primary-200 {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, white);
+  }
+  .bg-primary-300 {
+    background-color: color-mix(in srgb, var(--color-primary) 40%, white);
+  }
+  .bg-primary-400 {
+    background-color: color-mix(in srgb, var(--color-primary) 60%, white);
+  }
+  .bg-primary-500 {
+    background-color: var(--color-primary);
+  }
+  .bg-primary-600 {
+    background-color: color-mix(in srgb, var(--color-primary) 80%, black);
+  }
+  .bg-primary-700 {
+    background-color: color-mix(in srgb, var(--color-primary) 60%, black);
+  }
+  .bg-primary-800 {
+    background-color: color-mix(in srgb, var(--color-primary) 40%, black);
+  }
+  .bg-primary-900 {
+    background-color: color-mix(in srgb, var(--color-primary) 20%, black);
+  }
+
+  /* Secondary Background Colors */
+  .bg-secondary-100 {
+    background-color: color-mix(in srgb, var(--color-secondary) 10%, white);
+  }
+  .bg-secondary-200 {
+    background-color: color-mix(in srgb, var(--color-secondary) 20%, white);
+  }
+  .bg-secondary-300 {
+    background-color: color-mix(in srgb, var(--color-secondary) 40%, white);
+  }
+  .bg-secondary-400 {
+    background-color: color-mix(in srgb, var(--color-secondary) 60%, white);
+  }
+  .bg-secondary-500 {
+    background-color: var(--color-secondary);
+  }
+  .bg-secondary-600 {
+    background-color: color-mix(in srgb, var(--color-secondary) 80%, black);
+  }
+  .bg-secondary-700 {
+    background-color: color-mix(in srgb, var(--color-secondary) 60%, black);
+  }
+  .bg-secondary-800 {
+    background-color: color-mix(in srgb, var(--color-secondary) 40%, black);
+  }
+  .bg-secondary-900 {
+    background-color: color-mix(in srgb, var(--color-secondary) 20%, black);
+  }
+
+  /* Accent Background Colors */
+  .bg-accent-100 {
+    background-color: color-mix(in srgb, var(--color-accent) 10%, white);
+  }
+  .bg-accent-200 {
+    background-color: color-mix(in srgb, var(--color-accent) 20%, white);
+  }
+  .bg-accent-300 {
+    background-color: color-mix(in srgb, var(--color-accent) 40%, white);
+  }
+  .bg-accent-400 {
+    background-color: color-mix(in srgb, var(--color-accent) 60%, white);
+  }
+  .bg-accent-500 {
+    background-color: var(--color-accent);
+  }
+  .bg-accent-600 {
+    background-color: color-mix(in srgb, var(--color-accent) 80%, black);
+  }
+  .bg-accent-700 {
+    background-color: color-mix(in srgb, var(--color-accent) 60%, black);
+  }
+  .bg-accent-800 {
+    background-color: color-mix(in srgb, var(--color-accent) 40%, black);
+  }
+  .bg-accent-900 {
+    background-color: color-mix(in srgb, var(--color-accent) 20%, black);
+  }
+
+  /* Light Background Colors */
+  .bg-light-100 {
+    background-color: color-mix(in srgb, var(--color-light) 10%, white);
+  }
+  .bg-light-200 {
+    background-color: color-mix(in srgb, var(--color-light) 20%, white);
+  }
+  .bg-light-300 {
+    background-color: color-mix(in srgb, var(--color-light) 40%, white);
+  }
+  .bg-light-400 {
+    background-color: color-mix(in srgb, var(--color-light) 60%, white);
+  }
+  .bg-light-500 {
+    background-color: var(--color-light);
+  }
+  .bg-light-600 {
+    background-color: color-mix(in srgb, var(--color-light) 80%, black);
+  }
+  .bg-light-700 {
+    background-color: color-mix(in srgb, var(--color-light) 60%, black);
+  }
+  .bg-light-800 {
+    background-color: color-mix(in srgb, var(--color-light) 40%, black);
+  }
+  .bg-light-900 {
+    background-color: color-mix(in srgb, var(--color-light) 20%, black);
+  }
+
+  /* Hover variants for all colors */
+  .hover\:text-primary:hover {
+    color: var(--color-primary);
+  }
+  .hover\:text-secondary:hover {
+    color: var(--color-secondary);
+  }
+  .hover\:text-accent:hover {
+    color: var(--color-accent);
+  }
+  .hover\:text-light:hover {
     color: var(--color-light);
   }
 
+  /* Original utility classes */
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+  .text-accent {
+    color: var(--color-accent);
+  }
+  .text-light {
+    color: var(--color-light);
+  }
   .bg-primary {
     background-color: var(--color-primary);
   }
-
   .bg-secondary {
     background-color: var(--color-secondary);
   }
-
   .bg-accent {
     background-color: var(--color-accent);
   }
-
   .bg-light {
     background-color: var(--color-light);
+  }
+  .image-rendering-crisp {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 }
 

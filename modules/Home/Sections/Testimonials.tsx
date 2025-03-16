@@ -1,4 +1,5 @@
 import { testimonials } from "@/utils/testimonial-data";
+import Image from "next/image";
 import React, { FC, useEffect, useState } from "react";
 import {
   FaChevronLeft,
@@ -60,9 +61,11 @@ const Testimonials: FC = () => {
                   <div className="bg-white rounded-xl shadow-lg p-8 md:p-12">
                     <div className="flex flex-col items-center">
                       <div className="relative w-20 h-20 mb-6">
-                        <img
+                        <Image
                           src={testimonial.image}
                           alt={testimonial.name}
+                          width={800}
+                          height={384}
                           className="w-full h-full rounded-full object-cover"
                         />
                         <div className="absolute -bottom-2 -right-2 bg-primary p-2 rounded-full text-white">
