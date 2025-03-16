@@ -18,6 +18,9 @@ const Container = () => {
       {/* Services Grid */}
       <section className="py-16 bg-light pt-[120px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+            Compassionate Home Health Care Services
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <ServiceCard key={index} {...service} />
@@ -80,33 +83,33 @@ const FeatureCard = ({ title, description }: FeatureCardProps) => (
 
 const services = [
   {
-    title: "Primary Care",
-    description: "Comprehensive health services for patients of all ages.",
+    title: "Experienced Caregivers",
+    description: "Our team of caregivers are experienced in providing high-quality care to our clients. They are trained to handle a variety of medical conditions and are equipped with the skills and knowledge to provide compassionate care.",
     image: "/images/services/service2.jpg",
   },
   {
-    title: "Emergency Care",
-    description: "24/7 emergency medical services for urgent health needs.",
+    title: "Flexible Care Plans",
+    description: "At Caring 4 You and Yours, we understand that each client has unique needs and preferences. That's why we offer flexible care plans that can be customized to meet the specific needs of each client.",
     image: "/images/services/service1.jpg",
   },
   {
-    title: "Specialized Medicine",
-    description: "Expert care in various medical specialties.",
+    title: "Professional Services",
+    description: "We are dedicated to providing professional and reliable home health care services. Our caregivers are licensed, insured, and undergo regular training to ensure that they are up-to-date with the latest medical practices and techniques.",
     image: "/images/services/service2.jpg",
   },
   {
-    title: "Diagnostic Services",
-    description: "Advanced diagnostic testing and imaging services.",
+    title: "24/7 Availability",
+    description: "We are available 24/7 to provide support and care to our clients. Our caregivers are always just a phone call away, and we are committed to providing prompt and reliable services.",
     image: "/images/services/service1.jpg",
   },
   {
-    title: "Preventive Care",
-    description: "Regular check-ups and preventive health services.",
+    title: "Affordable Care",
+    description: "We believe that everyone should have access to high-quality home health care services. That's why we offer affordable care options that are designed to meet the needs and budgets of our clients.",
     image: "/images/services/service2.jpg",
   },
   {
-    title: "Rehabilitation",
-    description: "Physical therapy and rehabilitation programs.",
+    title: "Client-Centered Care",
+    description: "At Caring 4 You and Yours, we prioritize the needs and preferences of our clients. We work closely with our clients and their families to develop care plans that are tailored to meet their unique needs and goals.",
     image: "/images/services/service1.jpg",
   },
 ];

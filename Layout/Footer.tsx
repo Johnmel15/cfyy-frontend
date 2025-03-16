@@ -50,10 +50,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-white text-lg font-bold mb-4">HealthCare</h3>
+            <h3 className="text-white text-lg font-bold mb-4">Care 4 Your and Yours</h3>
             <p className="mb-4">
-              Providing quality healthcare services with compassion and
-              excellence since 2000.
+             Warmth and comfort of care that brings healing to your home.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="https://facebook.com" icon={<FaFacebookF />} />
@@ -100,26 +99,31 @@ const Footer = () => {
               <li className="flex items-start">
                 <FaMapMarkerAlt className="mt-1 mr-3 text-primary" />
                 <address className="not-italic">
-                  123 Healthcare Street
+                Gaithersburg
                   <br />
-                  Medical District, City
-                  <br />
-                  State, ZIP Code
+                  MD, United States, Maryland
+                  {/* <br />
+                  State, ZIP Code */}
                 </address>
               </li>
               <li className="flex items-center">
                 <FaPhone className="mr-3 text-primary" />
-                <a href="tel:+11234567890" className="hover:text-primary">
-                  (123) 456-7890
-                </a>
+                <div className="flex flex-col">
+                  <a href="tel:(301)792-5236" className="hover:text-primary">
+                    (301) 792-5236
+                  </a>
+                  <a href="tel:(301)250-6559" className="hover:text-primary mt-1">
+                    (301) 250-6559
+                  </a>
+                </div>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="mr-3 text-primary" />
                 <a
-                  href="mailto:info@healthcare.com"
+                  href="mailto:info@caring4youandyours.com"
                   className="hover:text-primary"
                 >
-                  info@healthcare.com
+                 info@caring4youandyours.com
                 </a>
               </li>
             </ul>

@@ -19,7 +19,6 @@ class CustomDocument extends Document {
           <meta charSet="UTF-8" />
           <meta name="description" content="Care 4 You and Yours" />
           <link rel="icon" href="/favicon.ico" />
-          <link href="/styles/globals.css" rel="stylesheet" />
         </Head>
         <body>
           <Main />

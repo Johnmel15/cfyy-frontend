@@ -171,39 +171,41 @@ const Container = () => {
                   icon={<FaPhone />}
                   title="Phone"
                   content={[
-                    "Emergency: (123) 456-7890",
-                    "Reception: (123) 456-7891",
+                    "(301) 792-5236",
+                    "(301) 250-6559",
                   ]}
-                  links={["tel:+11234567890", "tel:+11234567891"]}
+                  links={[
+                    "tel:(301)792-5236",
+                    "tel:(301)250-6559"
+                  ]}
                 />
                 <ContactInfo
                   icon={<FaEnvelope />}
                   title="Email"
                   content={[
-                    "info@healthcare.com",
-                    "appointments@healthcare.com",
+                    "caring4youandyours@gmail.com",
+                    "dinazabala@caring4youandyours.com",
                   ]}
                   links={[
-                    "mailto:info@healthcare.com",
-                    "mailto:appointments@healthcare.com",
+                    "mailto:caring4youandyours@gmail.com",
+                    "mailto:dinazabala@caring4youandyours.com",
                   ]}
                 />
                 <ContactInfo
                   icon={<FaMapMarkerAlt />}
                   title="Location"
                   content={[
-                    "123 Healthcare Street",
-                    "Medical District, City",
-                    "State, ZIP Code",
+                    "MD: 18721 Capella Lane Gaithersburg, MD. 20877",
+                    "VA: 8300 Boone Blvd #516 Vienna, VA. 22182",
                   ]}
                 />
                 <ContactInfo
                   icon={<FaClock />}
                   title="Hours"
                   content={[
-                    "Monday - Friday: 8:00 AM - 8:00 PM",
-                    "Saturday: 8:00 AM - 2:00 PM",
-                    "Sunday: Closed",
+                    "Monday to Friday 9:00AM to 5:00PM",
+                    "Sat By Appointment",
+                    "Sun By Appointment",
                   ]}
                 />
               </div>
@@ -212,7 +214,7 @@ const Container = () => {
               <div className="mt-8 rounded-lg overflow-hidden shadow-md">
                 <iframe
                   title="Location Map"
-                  src="https://www.google.com/maps/embed?pb=..." // Add your Google Maps embed URL
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3158.207978160906!2d-77.234!3d39.1503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b62c6b6c2c123d%3A0x90b24b1f!2s18721%20Capella%20Ln%2C%20Gaithersburg%2C%20MD%2020877%2C%20USA!5e0!3m2!1sen!2sus!4v1234567890"
                   className="w-full h-64"
                   allowFullScreen
                   loading="lazy"
@@ -223,6 +225,7 @@ const Container = () => {
           </div>
         </div>
       </section>
+      
 
       {/* Emergency Contact Banner */}
       <section className="bg-primary text-white py-8">
