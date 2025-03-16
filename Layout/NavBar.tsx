@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Modal from "./Modal"; // Adjust the path accordingly
-
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,9 @@ const Navbar = () => {
   ];
 
   const isActiveLink = (path: string) => {
-    return path === "/" ? router.pathname === "/" : router.pathname.startsWith(path);
+    return path === "/"
+      ? router.pathname === "/"
+      : router.pathname.startsWith(path);
   };
 
   return (
@@ -50,8 +52,8 @@ const Navbar = () => {
                   className={`px-3 py-2 text-sm font-medium transition-colors duration-200
                     ${
                       isActiveLink(link.path)
-                      ? "text-primary-500 font-[700]"
-                      : "text-gray-700 hover:font-[700] hover:text-primary"
+                        ? "text-primary-500"
+                        : "text-gray-700 hover:text-primary"
                     }
                   `}
                 >
@@ -61,7 +63,7 @@ const Navbar = () => {
               {/* Schedule Appointment Button */}
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary hover:scale-105 transition duration-300 transform"
+                className="cursor-pointer bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary hover:scale-105 transition duration-300 transform"
               >
                 Schedule Appointment
               </button>
