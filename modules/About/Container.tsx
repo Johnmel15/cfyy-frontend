@@ -6,12 +6,12 @@ const Container: FC = () => {
   return (
     <div>
       {/* Who We Are Section */}
-      <section className="py-16 bg-light">
+      <section className="py-16 bg-light pt-[120px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
             Who We Are
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {/* Caregivers You Can Trust */}
             <div className="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
@@ -19,7 +19,11 @@ const Container: FC = () => {
                 Caregivers You Can Trust
               </h3>
               <p className="text-gray-600">
-              It's heartbreaking to see your love one's health decline. We know the pain and suffering the patient and family go through as their love one slip away.  At Caring 4 You and Yours, we want to be there for you and your family as we provide you with the care and compassion your love one deserve.
+                It's heartbreaking to see your love one's health decline. We
+                know the pain and suffering the patient and family go through as
+                their love one slip away. At Caring 4 You and Yours, we want to
+                be there for you and your family as we provide you with the care
+                and compassion your love one deserve.
               </p>
             </div>
 
@@ -29,7 +33,12 @@ const Container: FC = () => {
                 Experienced and Supportive
               </h3>
               <p className="text-gray-600">
-              We understand that not one care plan fits all. Daily services can include anything from meal preparation, hygiene, cleaning, and supervision. We will take the time to get to know you and develop an individualized care plan that fits your specific needs.  We offer a complimentary in-home visit to assess your family's needs.   
+                We understand that not one care plan fits all. Daily services
+                can include anything from meal preparation, hygiene, cleaning,
+                and supervision. We will take the time to get to know you and
+                develop an individualized care plan that fits your specific
+                needs. We offer a complimentary in-home visit to assess your
+                family's needs.
               </p>
             </div>
 
@@ -39,7 +48,13 @@ const Container: FC = () => {
                 Experienced Home Health Aids
               </h3>
               <p className="text-gray-600">
-              Companionship is key to a trusted relationship with our caregivers. We not only strive to help you with everyday tasks but want to develop a caring relationship with you. We provide one-on-one attention and care that cannot compare in other settings.  Our caregivers are fully certified with years of experience.  Rest assured Caring 4 You and Yours will be with you every step of the way.
+                Companionship is key to a trusted relationship with our
+                caregivers. We not only strive to help you with everyday tasks
+                but want to develop a caring relationship with you. We provide
+                one-on-one attention and care that cannot compare in other
+                settings. Our caregivers are fully certified with years of
+                experience. Rest assured Caring 4 You and Yours will be with you
+                every step of the way.
               </p>
             </div>
           </div>

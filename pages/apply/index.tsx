@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import SignaturePad from 'react-signature-canvas';
-import { useRouter } from 'next/router';
+import SignaturePad from "react-signature-canvas";
+import { useRouter } from "next/router";
 
 interface FormData {
   homePhone: string;
@@ -113,106 +113,106 @@ const ApplicationForm = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const totalSteps = 5;
   const [errors, setErrors] = useState<FormErrors>({
-    homePhone: '',
-    cellPhone: '',
-    email: '',
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    address: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    gender: '',
-    liveInCare: '',
-    felony: '',
-    vehicleYear: '',
-    vehicleMake: '',
-    driversLicense: '',
-    experience: '',
-    tbTest: '',
-    tbResult: '',
-    startDate: '',
-    hoursPerWeek: '',
-    expectedRate: '',
-    mondayShift: '',
-    tuesdayShift: '',
-    wednesdayShift: '',
-    thursdayShift: '',
-    fridayShift: '',
-    saturdayShift: '',
-    sundayShift: '',
-    educationLevel: '',
-    schoolName: '',
-    fieldOfStudy: '',
-    graduationYear: '',
-    academicHonors: '',
-    additionalCertifications: '',
-    companyName: '',
-    jobTitle: '',
-    employmentStartDate: '',
-    employmentEndDate: '',
-    jobResponsibilities: '',
-    reasonForLeaving: '',
-    companyAddress: '',
-    supervisorName: '',
-    contactPreviousEmployer: '',
-    certificationAgreement: '',
-    applicantName: '',
-    applicantSignature: '',
-    signatureDate: '',
-    cvFile: ''
+    homePhone: "",
+    cellPhone: "",
+    email: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    gender: "",
+    liveInCare: "",
+    felony: "",
+    vehicleYear: "",
+    vehicleMake: "",
+    driversLicense: "",
+    experience: "",
+    tbTest: "",
+    tbResult: "",
+    startDate: "",
+    hoursPerWeek: "",
+    expectedRate: "",
+    mondayShift: "",
+    tuesdayShift: "",
+    wednesdayShift: "",
+    thursdayShift: "",
+    fridayShift: "",
+    saturdayShift: "",
+    sundayShift: "",
+    educationLevel: "",
+    schoolName: "",
+    fieldOfStudy: "",
+    graduationYear: "",
+    academicHonors: "",
+    additionalCertifications: "",
+    companyName: "",
+    jobTitle: "",
+    employmentStartDate: "",
+    employmentEndDate: "",
+    jobResponsibilities: "",
+    reasonForLeaving: "",
+    companyAddress: "",
+    supervisorName: "",
+    contactPreviousEmployer: "",
+    certificationAgreement: "",
+    applicantName: "",
+    applicantSignature: "",
+    signatureDate: "",
+    cvFile: "",
   });
   const [formData, setFormData] = useState<FormData>({
-    homePhone: '',
-    cellPhone: '',
-    email: '',
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    address: '',
-    city: '',
-    state: '',
-    zipCode: '',
-    gender: '',
-    liveInCare: '',
-    felony: '',
-    vehicleYear: '',
-    vehicleMake: '',
-    driversLicense: '',
+    homePhone: "",
+    cellPhone: "",
+    email: "",
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    gender: "",
+    liveInCare: "",
+    felony: "",
+    vehicleYear: "",
+    vehicleMake: "",
+    driversLicense: "",
     experience: [],
-    tbTest: '',
-    tbResult: '',
-    startDate: '',
-    hoursPerWeek: '',
-    expectedRate: '',
-    mondayShift: '',
-    tuesdayShift: '',
-    wednesdayShift: '',
-    thursdayShift: '',
-    fridayShift: '',
-    saturdayShift: '',
-    sundayShift: '',
-    educationLevel: '',
-    schoolName: '',
-    fieldOfStudy: '',
-    graduationYear: '',
-    academicHonors: '',
-    additionalCertifications: '',
-    companyName: '',
-    jobTitle: '',
-    employmentStartDate: '',
-    employmentEndDate: '',
-    jobResponsibilities: '',
-    reasonForLeaving: '',
-    companyAddress: '',
-    supervisorName: '',
-    contactPreviousEmployer: '',
+    tbTest: "",
+    tbResult: "",
+    startDate: "",
+    hoursPerWeek: "",
+    expectedRate: "",
+    mondayShift: "",
+    tuesdayShift: "",
+    wednesdayShift: "",
+    thursdayShift: "",
+    fridayShift: "",
+    saturdayShift: "",
+    sundayShift: "",
+    educationLevel: "",
+    schoolName: "",
+    fieldOfStudy: "",
+    graduationYear: "",
+    academicHonors: "",
+    additionalCertifications: "",
+    companyName: "",
+    jobTitle: "",
+    employmentStartDate: "",
+    employmentEndDate: "",
+    jobResponsibilities: "",
+    reasonForLeaving: "",
+    companyAddress: "",
+    supervisorName: "",
+    contactPreviousEmployer: "",
     certificationAgreement: false,
-    applicantName: '',
-    applicantSignature: '',
-    signatureDate: '',
-    cvFile: null
+    applicantName: "",
+    applicantSignature: "",
+    signatureDate: "",
+    cvFile: null,
   });
   const signaturePadRef = useRef<SignaturePad>(null);
 
@@ -227,102 +227,107 @@ const ApplicationForm = () => {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value, type, checked } = e.target as HTMLInputElement;
-    
-    if (type === 'checkbox') {
-      if (name === 'certificationAgreement') {
-        setFormData(prev => ({
+
+    if (type === "checkbox") {
+      if (name === "certificationAgreement") {
+        setFormData((prev) => ({
           ...prev,
-          [name]: checked
+          [name]: checked,
         }));
       } else {
-        setFormData(prev => ({
+        setFormData((prev) => ({
           ...prev,
-          experience: checked 
+          experience: checked
             ? [...prev.experience, name]
-            : prev.experience.filter(exp => exp !== name)
+            : prev.experience.filter((exp) => exp !== name),
         }));
         // Clear experience error if at least one experience is selected
         if (checked || formData.experience.length > 1) {
-          setErrors(prev => ({
+          setErrors((prev) => ({
             ...prev,
-            experience: ''
+            experience: "",
           }));
         }
       }
-    } else if (type === 'radio') {
-      setFormData(prev => ({
+    } else if (type === "radio") {
+      setFormData((prev) => ({
         ...prev,
-        [name]: value
+        [name]: value,
       }));
-    } else if (type === 'file') {
+    } else if (type === "file") {
       // File inputs are handled by handleFileChange
       return;
     } else {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        [name]: value
+        [name]: value,
       }));
     }
 
     // Clear error when user makes a selection
-    setErrors(prev => ({
+    setErrors((prev) => ({
       ...prev,
-      [name]: ''
+      [name]: "",
     }));
   };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      email: value
+      email: value,
     }));
 
     if (value && !validateEmail(value)) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        email: 'Email must be formatted correctly.'
+        email: "Email must be formatted correctly.",
       }));
     } else {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        email: ''
+        email: "",
       }));
     }
   };
 
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>, field: 'homePhone' | 'cellPhone') => {
+  const handlePhoneChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    field: "homePhone" | "cellPhone"
+  ) => {
     const value = e.target.value;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [field]: value
+      [field]: value,
     }));
 
     if (value && !validatePhoneNumber(value)) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [field]: 'A valid phone number may only contain numbers, +()-. or x'
+        [field]: "A valid phone number may only contain numbers, +()-. or x",
       }));
     } else {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [field]: ''
+        [field]: "",
       }));
     }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        cvFile: e.target.files![0]
+        cvFile: e.target.files![0],
       }));
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        cvFile: ''
+        cvFile: "",
       }));
     }
   };
@@ -330,9 +335,9 @@ const ApplicationForm = () => {
   const clearSignature = () => {
     if (signaturePadRef.current) {
       signaturePadRef.current.clear();
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        applicantSignature: ''
+        applicantSignature: "",
       }));
     }
   };
@@ -340,13 +345,13 @@ const ApplicationForm = () => {
   const saveSignature = () => {
     if (signaturePadRef.current) {
       const signatureData = signaturePadRef.current.toDataURL();
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        applicantSignature: signatureData
+        applicantSignature: signatureData,
       }));
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        applicantSignature: ''
+        applicantSignature: "",
       }));
     }
   };
@@ -355,205 +360,210 @@ const ApplicationForm = () => {
     const newErrors = { ...errors };
     let isValid = true;
 
-    switch(step) {
+    switch (step) {
       case 1:
         // Validate personal information
         if (!formData.firstName) {
-          newErrors.firstName = 'First name is required';
+          newErrors.firstName = "First name is required";
           isValid = false;
         }
         if (!formData.middleName) {
-          newErrors.middleName = 'Middle name is required';
+          newErrors.middleName = "Middle name is required";
           isValid = false;
         }
         if (!formData.lastName) {
-          newErrors.lastName = 'Last name is required';
+          newErrors.lastName = "Last name is required";
           isValid = false;
         }
         if (!formData.address) {
-          newErrors.address = 'Address is required';
+          newErrors.address = "Address is required";
           isValid = false;
         }
         if (!formData.city) {
-          newErrors.city = 'City is required';
+          newErrors.city = "City is required";
           isValid = false;
         }
         if (!formData.state) {
-          newErrors.state = 'State is required';
+          newErrors.state = "State is required";
           isValid = false;
         }
         if (!formData.zipCode) {
-          newErrors.zipCode = 'Zip code is required';
+          newErrors.zipCode = "Zip code is required";
           isValid = false;
         }
         if (!formData.email) {
-          newErrors.email = 'Email is required';
+          newErrors.email = "Email is required";
           isValid = false;
         }
         if (!formData.homePhone) {
-          newErrors.homePhone = 'Home phone is required';
+          newErrors.homePhone = "Home phone is required";
           isValid = false;
         }
         if (!formData.cellPhone) {
-          newErrors.cellPhone = 'Cell phone is required';
+          newErrors.cellPhone = "Cell phone is required";
           isValid = false;
         }
         if (!formData.gender) {
-          newErrors.gender = 'Gender is required';
+          newErrors.gender = "Gender is required";
           isValid = false;
         }
         if (!formData.liveInCare) {
-          newErrors.liveInCare = 'Please select an option';
+          newErrors.liveInCare = "Please select an option";
           isValid = false;
         }
         if (!formData.felony) {
-          newErrors.felony = 'Please select an option';
+          newErrors.felony = "Please select an option";
           isValid = false;
         }
         // Validate vehicle information
         if (!formData.vehicleYear) {
-          newErrors.vehicleYear = 'Vehicle year is required';
+          newErrors.vehicleYear = "Vehicle year is required";
           isValid = false;
         } else if (!/^\d{4}$/.test(formData.vehicleYear)) {
-          newErrors.vehicleYear = 'Please enter a valid 4-digit year';
+          newErrors.vehicleYear = "Please enter a valid 4-digit year";
           isValid = false;
         }
         if (!formData.vehicleMake) {
-          newErrors.vehicleMake = 'Vehicle make is required';
+          newErrors.vehicleMake = "Vehicle make is required";
           isValid = false;
         }
         if (!formData.driversLicense) {
-          newErrors.driversLicense = 'Please select if you have a driver\'s license';
+          newErrors.driversLicense =
+            "Please select if you have a driver's license";
           isValid = false;
         }
         // Validate experience - ensure at least one is selected
         if (formData.experience.length === 0) {
-          newErrors.experience = 'Please select at least one experience';
+          newErrors.experience = "Please select at least one experience";
           isValid = false;
         }
         // Validate TB test information
         if (!formData.tbTest) {
-          newErrors.tbTest = 'Please select if you have had a TB test in the last 3 years';
+          newErrors.tbTest =
+            "Please select if you have had a TB test in the last 3 years";
           isValid = false;
         }
         // If TB test is yes, result must be selected
-        if (formData.tbTest === 'yes' && !formData.tbResult) {
-          newErrors.tbResult = 'Please select your TB test result';
+        if (formData.tbTest === "yes" && !formData.tbResult) {
+          newErrors.tbResult = "Please select your TB test result";
           isValid = false;
         }
         break;
       case 2:
         // Validate Work Preference
         if (!formData.startDate) {
-          newErrors.startDate = 'Start date is required';
+          newErrors.startDate = "Start date is required";
           isValid = false;
         }
         if (!formData.hoursPerWeek) {
-          newErrors.hoursPerWeek = 'Hours per week is required';
+          newErrors.hoursPerWeek = "Hours per week is required";
           isValid = false;
         }
         if (!formData.expectedRate) {
-          newErrors.expectedRate = 'Expected rate of pay is required';
+          newErrors.expectedRate = "Expected rate of pay is required";
           isValid = false;
         }
         // Validate Shift Availability
         if (!formData.mondayShift) {
-          newErrors.mondayShift = 'Please select Monday shift';
+          newErrors.mondayShift = "Please select Monday shift";
           isValid = false;
         }
         if (!formData.tuesdayShift) {
-          newErrors.tuesdayShift = 'Please select Tuesday shift';
+          newErrors.tuesdayShift = "Please select Tuesday shift";
           isValid = false;
         }
         if (!formData.wednesdayShift) {
-          newErrors.wednesdayShift = 'Please select Wednesday shift';
+          newErrors.wednesdayShift = "Please select Wednesday shift";
           isValid = false;
         }
         if (!formData.thursdayShift) {
-          newErrors.thursdayShift = 'Please select Thursday shift';
+          newErrors.thursdayShift = "Please select Thursday shift";
           isValid = false;
         }
         if (!formData.fridayShift) {
-          newErrors.fridayShift = 'Please select Friday shift';
+          newErrors.fridayShift = "Please select Friday shift";
           isValid = false;
         }
         if (!formData.saturdayShift) {
-          newErrors.saturdayShift = 'Please select Saturday shift';
+          newErrors.saturdayShift = "Please select Saturday shift";
           isValid = false;
         }
         if (!formData.sundayShift) {
-          newErrors.sundayShift = 'Please select Sunday shift';
+          newErrors.sundayShift = "Please select Sunday shift";
           isValid = false;
         }
         break;
       case 3:
         // Validate Education Information
         if (!formData.educationLevel) {
-          newErrors.educationLevel = 'Please select your highest level of education';
+          newErrors.educationLevel =
+            "Please select your highest level of education";
           isValid = false;
         }
         if (!formData.schoolName) {
-          newErrors.schoolName = 'School/University name is required';
+          newErrors.schoolName = "School/University name is required";
           isValid = false;
         }
         if (!formData.fieldOfStudy) {
-          newErrors.fieldOfStudy = 'Field of study is required';
+          newErrors.fieldOfStudy = "Field of study is required";
           isValid = false;
         }
         if (!formData.graduationYear) {
-          newErrors.graduationYear = 'Graduation year is required';
+          newErrors.graduationYear = "Graduation year is required";
           isValid = false;
         } else if (!/^\d{4}$/.test(formData.graduationYear)) {
-          newErrors.graduationYear = 'Please enter a valid 4-digit year';
+          newErrors.graduationYear = "Please enter a valid 4-digit year";
           isValid = false;
         }
         break;
       case 4:
         // Validate Employment History
         if (!formData.companyName) {
-          newErrors.companyName = 'Company name is required';
+          newErrors.companyName = "Company name is required";
           isValid = false;
         }
         if (!formData.jobTitle) {
-          newErrors.jobTitle = 'Job title is required';
+          newErrors.jobTitle = "Job title is required";
           isValid = false;
         }
         if (!formData.employmentStartDate) {
-          newErrors.employmentStartDate = 'Start date is required';
+          newErrors.employmentStartDate = "Start date is required";
           isValid = false;
         }
         if (!formData.employmentEndDate) {
-          newErrors.employmentEndDate = 'End date is required';
+          newErrors.employmentEndDate = "End date is required";
           isValid = false;
         }
         if (!formData.jobResponsibilities) {
-          newErrors.jobResponsibilities = 'Job responsibilities are required';
+          newErrors.jobResponsibilities = "Job responsibilities are required";
           isValid = false;
         }
         if (!formData.reasonForLeaving) {
-          newErrors.reasonForLeaving = 'Please select a reason for leaving';
+          newErrors.reasonForLeaving = "Please select a reason for leaving";
           isValid = false;
         }
         if (!formData.contactPreviousEmployer) {
-          newErrors.contactPreviousEmployer = 'Please select if we can contact your previous employer';
+          newErrors.contactPreviousEmployer =
+            "Please select if we can contact your previous employer";
           isValid = false;
         }
         break;
       case 5:
         if (!formData.certificationAgreement) {
-          newErrors.certificationAgreement = 'You must agree to the certification statement';
+          newErrors.certificationAgreement =
+            "You must agree to the certification statement";
           isValid = false;
         }
         if (!formData.applicantName) {
-          newErrors.applicantName = 'Applicant name is required';
+          newErrors.applicantName = "Applicant name is required";
           isValid = false;
         }
         if (!formData.signatureDate) {
-          newErrors.signatureDate = 'Date is required';
+          newErrors.signatureDate = "Date is required";
           isValid = false;
         }
         if (!formData.cvFile) {
-          newErrors.cvFile = 'Please upload your CV';
+          newErrors.cvFile = "Please upload your CV";
           isValid = false;
         }
         break;
@@ -582,13 +592,13 @@ const ApplicationForm = () => {
       setIsSubmitting(true);
       try {
         // Here you would typically make an API call to submit the form data
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulating API call
+        await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulating API call
         setShowSuccess(true);
         setTimeout(() => {
-          router.push('/');
+          router.push("/");
         }, 3000);
       } catch (error) {
-        console.error('Error submitting form:', error);
+        console.error("Error submitting form:", error);
       } finally {
         setIsSubmitting(false);
       }
@@ -596,11 +606,13 @@ const ApplicationForm = () => {
   };
 
   const renderStep = (step: number) => {
-    switch(step) {
+    switch (step) {
       case 1:
         return (
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary mb-4">Personal Information</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">
+              Personal Information
+            </h3>
             <div className="grid grid-cols-3 gap-4 mb-4">
               <div>
                 <label className="block text-gray-700 mb-1">
@@ -613,13 +625,15 @@ const ApplicationForm = () => {
                   value={formData.firstName}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.firstName ? 'border-red-500' : ''
+                    errors.firstName ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your first name"
                   required
                 />
                 {errors.firstName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.firstName}
+                  </p>
                 )}
               </div>
               <div>
@@ -633,13 +647,15 @@ const ApplicationForm = () => {
                   value={formData.middleName}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.middleName ? 'border-red-500' : ''
+                    errors.middleName ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your middle name"
                   required
                 />
                 {errors.middleName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.middleName}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.middleName}
+                  </p>
                 )}
               </div>
               <div>
@@ -653,7 +669,7 @@ const ApplicationForm = () => {
                   value={formData.lastName}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.lastName ? 'border-red-500' : ''
+                    errors.lastName ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your last name"
                   required
@@ -675,7 +691,7 @@ const ApplicationForm = () => {
                   value={formData.address}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.address ? 'border-red-500' : ''
+                    errors.address ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your address"
                   required
@@ -695,7 +711,7 @@ const ApplicationForm = () => {
                   value={formData.city}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.city ? 'border-red-500' : ''
+                    errors.city ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your city"
                   required
@@ -715,7 +731,7 @@ const ApplicationForm = () => {
                   value={formData.state}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.state ? 'border-red-500' : ''
+                    errors.state ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your state"
                   required
@@ -735,7 +751,7 @@ const ApplicationForm = () => {
                   value={formData.zipCode}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.zipCode ? 'border-red-500' : ''
+                    errors.zipCode ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your zip code"
                   required
@@ -757,7 +773,7 @@ const ApplicationForm = () => {
                   value={formData.email}
                   onChange={handleEmailChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.email ? 'border-red-500' : ''
+                    errors.email ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your email"
                   required
@@ -775,15 +791,17 @@ const ApplicationForm = () => {
                   type="tel"
                   name="homePhone"
                   value={formData.homePhone}
-                  onChange={(e) => handlePhoneChange(e, 'homePhone')}
+                  onChange={(e) => handlePhoneChange(e, "homePhone")}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.homePhone ? 'border-red-500' : ''
+                    errors.homePhone ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your home phone"
                   required
                 />
                 {errors.homePhone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.homePhone}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.homePhone}
+                  </p>
                 )}
               </div>
               <div>
@@ -795,15 +813,17 @@ const ApplicationForm = () => {
                   type="tel"
                   name="cellPhone"
                   value={formData.cellPhone}
-                  onChange={(e) => handlePhoneChange(e, 'cellPhone')}
+                  onChange={(e) => handlePhoneChange(e, "cellPhone")}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.cellPhone ? 'border-red-500' : ''
+                    errors.cellPhone ? "border-red-500" : ""
                   }`}
                   placeholder="Enter your cell phone"
                   required
                 />
                 {errors.cellPhone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.cellPhone}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.cellPhone}
+                  </p>
                 )}
               </div>
             </div>
@@ -814,24 +834,24 @@ const ApplicationForm = () => {
               </label>
               <div className="flex space-x-4">
                 <label className="inline-flex items-center">
-                  <input 
-                    type="radio" 
-                    name="gender" 
+                  <input
+                    type="radio"
+                    name="gender"
                     value="male"
-                    checked={formData.gender === 'male'}
+                    checked={formData.gender === "male"}
                     onChange={handleInputChange}
-                    className="form-radio h-4 w-4 text-primary" 
+                    className="form-radio h-4 w-4 text-primary"
                   />
                   <span className="ml-2">Male</span>
                 </label>
                 <label className="inline-flex items-center">
-                  <input 
-                    type="radio" 
-                    name="gender" 
+                  <input
+                    type="radio"
+                    name="gender"
                     value="female"
-                    checked={formData.gender === 'female'}
+                    checked={formData.gender === "female"}
                     onChange={handleInputChange}
-                    className="form-radio h-4 w-4 text-primary" 
+                    className="form-radio h-4 w-4 text-primary"
                   />
                   <span className="ml-2">Female</span>
                 </label>
@@ -848,30 +868,32 @@ const ApplicationForm = () => {
                 </label>
                 <div className="flex space-x-4">
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="liveInCare" 
+                    <input
+                      type="radio"
+                      name="liveInCare"
                       value="yes"
-                      checked={formData.liveInCare === 'yes'}
+                      checked={formData.liveInCare === "yes"}
                       onChange={handleInputChange}
-                      className="form-radio h-4 w-4 text-primary" 
+                      className="form-radio h-4 w-4 text-primary"
                     />
                     <span className="ml-2">Yes</span>
                   </label>
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="liveInCare" 
+                    <input
+                      type="radio"
+                      name="liveInCare"
                       value="no"
-                      checked={formData.liveInCare === 'no'}
+                      checked={formData.liveInCare === "no"}
                       onChange={handleInputChange}
-                      className="form-radio h-4 w-4 text-primary" 
+                      className="form-radio h-4 w-4 text-primary"
                     />
                     <span className="ml-2">No</span>
                   </label>
                 </div>
                 {errors.liveInCare && (
-                  <p className="text-red-500 text-sm mt-1">{errors.liveInCare}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.liveInCare}
+                  </p>
                 )}
               </div>
               <div>
@@ -881,24 +903,24 @@ const ApplicationForm = () => {
                 </label>
                 <div className="flex space-x-4">
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="felony" 
+                    <input
+                      type="radio"
+                      name="felony"
                       value="yes"
-                      checked={formData.felony === 'yes'}
+                      checked={formData.felony === "yes"}
                       onChange={handleInputChange}
-                      className="form-radio h-4 w-4 text-primary" 
+                      className="form-radio h-4 w-4 text-primary"
                     />
                     <span className="ml-2">Yes</span>
                   </label>
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="felony" 
+                    <input
+                      type="radio"
+                      name="felony"
                       value="no"
-                      checked={formData.felony === 'no'}
+                      checked={formData.felony === "no"}
                       onChange={handleInputChange}
-                      className="form-radio h-4 w-4 text-primary" 
+                      className="form-radio h-4 w-4 text-primary"
                     />
                     <span className="ml-2">No</span>
                   </label>
@@ -908,7 +930,9 @@ const ApplicationForm = () => {
                 )}
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-primary mb-4">Vehicle Information</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">
+              Vehicle Information
+            </h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-gray-700 mb-1">
@@ -921,12 +945,14 @@ const ApplicationForm = () => {
                   value={formData.vehicleYear}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.vehicleYear ? 'border-red-500' : ''
+                    errors.vehicleYear ? "border-red-500" : ""
                   }`}
                   placeholder="Enter vehicle year"
                 />
                 {errors.vehicleYear && (
-                  <p className="text-red-500 text-sm mt-1">{errors.vehicleYear}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.vehicleYear}
+                  </p>
                 )}
               </div>
               <div>
@@ -940,12 +966,14 @@ const ApplicationForm = () => {
                   value={formData.vehicleMake}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.vehicleMake ? 'border-red-500' : ''
+                    errors.vehicleMake ? "border-red-500" : ""
                   }`}
                   placeholder="Enter vehicle make"
                 />
                 {errors.vehicleMake && (
-                  <p className="text-red-500 text-sm mt-1">{errors.vehicleMake}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.vehicleMake}
+                  </p>
                 )}
               </div>
             </div>
@@ -956,176 +984,211 @@ const ApplicationForm = () => {
               </label>
               <div className="flex space-x-4">
                 <label className="inline-flex items-center">
-                  <input 
-                    type="radio" 
-                    name="driversLicense" 
+                  <input
+                    type="radio"
+                    name="driversLicense"
                     value="yes"
-                    checked={formData.driversLicense === 'yes'}
+                    checked={formData.driversLicense === "yes"}
                     onChange={handleInputChange}
                     className={`form-radio h-4 w-4 text-primary ${
-                      errors.driversLicense ? 'border-red-500' : ''
+                      errors.driversLicense ? "border-red-500" : ""
                     }`}
                   />
                   <span className="ml-2">Yes</span>
                 </label>
                 <label className="inline-flex items-center">
-                  <input 
-                    type="radio" 
-                    name="driversLicense" 
+                  <input
+                    type="radio"
+                    name="driversLicense"
                     value="no"
-                    checked={formData.driversLicense === 'no'}
+                    checked={formData.driversLicense === "no"}
                     onChange={handleInputChange}
                     className={`form-radio h-4 w-4 text-primary ${
-                      errors.driversLicense ? 'border-red-500' : ''
+                      errors.driversLicense ? "border-red-500" : ""
                     }`}
                   />
                   <span className="ml-2">No</span>
                 </label>
               </div>
               {errors.driversLicense && (
-                <p className="text-red-500 text-sm mt-1">{errors.driversLicense}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.driversLicense}
+                </p>
               )}
             </div>
             <h3 className="text-2xl font-bold text-primary mb-4">Experience</h3>
-            <p className="text-sm text-gray-600 mb-4">Please select at least one experience <span className="text-red-500">*</span></p>
+            <p className="text-sm text-gray-600 mb-4">
+              Please select at least one experience{" "}
+              <span className="text-red-500">*</span>
+            </p>
             <div className="grid grid-cols-2 gap-x-8 gap-y-4">
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="alzheimers"
-                  checked={formData.experience.includes('alzheimers')}
+                  checked={formData.experience.includes("alzheimers")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Alzheimer's</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="bedBath"
-                  checked={formData.experience.includes('bedBath')}
+                  checked={formData.experience.includes("bedBath")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Bed Bath</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="cancer"
-                  checked={formData.experience.includes('cancer')}
+                  checked={formData.experience.includes("cancer")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Cancer</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="combative"
-                  checked={formData.experience.includes('combative')}
+                  checked={formData.experience.includes("combative")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Combative</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="dementia"
-                  checked={formData.experience.includes('dementia')}
+                  checked={formData.experience.includes("dementia")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Dementia</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="dementiaExperience"
-                  checked={formData.experience.includes('dementiaExperience')}
+                  checked={formData.experience.includes("dementiaExperience")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Dementia Experience</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="gaitBelt"
-                  checked={formData.experience.includes('gaitBelt')}
+                  checked={formData.experience.includes("gaitBelt")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Gait Belt Experience</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="glucoseMonitor"
-                  checked={formData.experience.includes('glucoseMonitor')}
+                  checked={formData.experience.includes("glucoseMonitor")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Glucose Monitor</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="hospice"
-                  checked={formData.experience.includes('hospice')}
+                  checked={formData.experience.includes("hospice")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Hospice</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="hospiceExperience"
-                  checked={formData.experience.includes('hospiceExperience')}
+                  checked={formData.experience.includes("hospiceExperience")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Hospice Experience</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="hoyerLift"
-                  checked={formData.experience.includes('hoyerLift')}
+                  checked={formData.experience.includes("hoyerLift")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
-                <span className="ml-3 text-gray-700">Hoyer Lift Experience</span>
+                <span className="ml-3 text-gray-700">
+                  Hoyer Lift Experience
+                </span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="incontinence"
-                  checked={formData.experience.includes('incontinence')}
+                  checked={formData.experience.includes("incontinence")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Incontinence</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="parkinsons"
-                  checked={formData.experience.includes('parkinsons')}
+                  checked={formData.experience.includes("parkinsons")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Parkinson's</span>
               </label>
               <label className="inline-flex items-center p-2 hover:bg-gray-50 rounded-lg">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   name="stroke"
-                  checked={formData.experience.includes('stroke')}
+                  checked={formData.experience.includes("stroke")}
                   onChange={handleInputChange}
-                  className={`form-checkbox h-5 w-5 text-primary ${errors.experience ? 'border-red-500' : ''}`}
+                  className={`form-checkbox h-5 w-5 text-primary ${
+                    errors.experience ? "border-red-500" : ""
+                  }`}
                 />
                 <span className="ml-3 text-gray-700">Stroke</span>
               </label>
@@ -1141,24 +1204,28 @@ const ApplicationForm = () => {
                 </label>
                 <div className="flex space-x-4">
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="tbTest" 
+                    <input
+                      type="radio"
+                      name="tbTest"
                       value="yes"
-                      checked={formData.tbTest === 'yes'}
+                      checked={formData.tbTest === "yes"}
                       onChange={handleInputChange}
-                      className={`form-radio h-4 w-4 text-primary ${errors.tbTest ? 'border-red-500' : ''}`}
+                      className={`form-radio h-4 w-4 text-primary ${
+                        errors.tbTest ? "border-red-500" : ""
+                      }`}
                     />
                     <span className="ml-2">Yes</span>
                   </label>
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="tbTest" 
+                    <input
+                      type="radio"
+                      name="tbTest"
                       value="no"
-                      checked={formData.tbTest === 'no'}
+                      checked={formData.tbTest === "no"}
                       onChange={handleInputChange}
-                      className={`form-radio h-4 w-4 text-primary ${errors.tbTest ? 'border-red-500' : ''}`}
+                      className={`form-radio h-4 w-4 text-primary ${
+                        errors.tbTest ? "border-red-500" : ""
+                      }`}
                     />
                     <span className="ml-2">No</span>
                   </label>
@@ -1174,24 +1241,28 @@ const ApplicationForm = () => {
                 </label>
                 <div className="flex space-x-4">
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="tbResult" 
+                    <input
+                      type="radio"
+                      name="tbResult"
                       value="negative"
-                      checked={formData.tbResult === 'negative'}
+                      checked={formData.tbResult === "negative"}
                       onChange={handleInputChange}
-                      className={`form-radio h-4 w-4 text-primary ${errors.tbResult ? 'border-red-500' : ''}`}
+                      className={`form-radio h-4 w-4 text-primary ${
+                        errors.tbResult ? "border-red-500" : ""
+                      }`}
                     />
                     <span className="ml-2">Negative</span>
                   </label>
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="tbResult" 
+                    <input
+                      type="radio"
+                      name="tbResult"
                       value="positive"
-                      checked={formData.tbResult === 'positive'}
+                      checked={formData.tbResult === "positive"}
                       onChange={handleInputChange}
-                      className={`form-radio h-4 w-4 text-primary ${errors.tbResult ? 'border-red-500' : ''}`}
+                      className={`form-radio h-4 w-4 text-primary ${
+                        errors.tbResult ? "border-red-500" : ""
+                      }`}
                     />
                     <span className="ml-2">Positive</span>
                   </label>
@@ -1206,7 +1277,9 @@ const ApplicationForm = () => {
       case 2:
         return (
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary mb-4">Work Preference</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">
+              Work Preference
+            </h3>
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <label className="block text-gray-700 mb-1">
@@ -1219,11 +1292,13 @@ const ApplicationForm = () => {
                   value={formData.startDate}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.startDate ? 'border-red-500' : ''
+                    errors.startDate ? "border-red-500" : ""
                   }`}
                 />
                 {errors.startDate && (
-                  <p className="text-red-500 text-sm mt-1">{errors.startDate}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.startDate}
+                  </p>
                 )}
               </div>
               <div>
@@ -1237,12 +1312,14 @@ const ApplicationForm = () => {
                   value={formData.hoursPerWeek}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.hoursPerWeek ? 'border-red-500' : ''
+                    errors.hoursPerWeek ? "border-red-500" : ""
                   }`}
                   placeholder="Enter hours per week"
                 />
                 {errors.hoursPerWeek && (
-                  <p className="text-red-500 text-sm mt-1">{errors.hoursPerWeek}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.hoursPerWeek}
+                  </p>
                 )}
               </div>
               <div>
@@ -1256,19 +1333,31 @@ const ApplicationForm = () => {
                   value={formData.expectedRate}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.expectedRate ? 'border-red-500' : ''
+                    errors.expectedRate ? "border-red-500" : ""
                   }`}
                   placeholder="Enter expected rate"
                 />
                 {errors.expectedRate && (
-                  <p className="text-red-500 text-sm mt-1">{errors.expectedRate}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.expectedRate}
+                  </p>
                 )}
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold text-primary mb-4">Shift Availability</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">
+              Shift Availability
+            </h3>
             <div className="grid grid-cols-2 gap-4">
-              {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
+              {[
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday",
+              ].map((day) => (
                 <div key={day}>
                   <label className="block text-gray-700 mb-1">
                     {day}
@@ -1276,10 +1365,16 @@ const ApplicationForm = () => {
                   </label>
                   <select
                     name={`${day.toLowerCase()}Shift`}
-                    value={formData[`${day.toLowerCase()}Shift` as keyof FormData] as string}
+                    value={
+                      formData[
+                        `${day.toLowerCase()}Shift` as keyof FormData
+                      ] as string
+                    }
                     onChange={handleInputChange}
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                      errors[`${day.toLowerCase()}Shift` as keyof FormErrors] ? 'border-red-500' : ''
+                      errors[`${day.toLowerCase()}Shift` as keyof FormErrors]
+                        ? "border-red-500"
+                        : ""
                     }`}
                   >
                     <option value="">Select shift</option>
@@ -1313,12 +1408,14 @@ const ApplicationForm = () => {
                   value={formData.educationLevel}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.educationLevel ? 'border-red-500' : ''
+                    errors.educationLevel ? "border-red-500" : ""
                   }`}
                 >
                   <option value="">Select education level</option>
                   <option value="highSchool">High School Diploma</option>
-                  <option value="vocational">Vocational / Technical Certificate</option>
+                  <option value="vocational">
+                    Vocational / Technical Certificate
+                  </option>
                   <option value="associate">Associate Degree</option>
                   <option value="bachelors">Bachelor's Degree</option>
                   <option value="masters">Master's Degree</option>
@@ -1326,7 +1423,9 @@ const ApplicationForm = () => {
                   <option value="other">Others (Specify)</option>
                 </select>
                 {errors.educationLevel && (
-                  <p className="text-red-500 text-sm mt-1">{errors.educationLevel}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.educationLevel}
+                  </p>
                 )}
               </div>
               <div>
@@ -1340,12 +1439,14 @@ const ApplicationForm = () => {
                   value={formData.schoolName}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.schoolName ? 'border-red-500' : ''
+                    errors.schoolName ? "border-red-500" : ""
                   }`}
                   placeholder="Enter school/university name"
                 />
                 {errors.schoolName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.schoolName}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.schoolName}
+                  </p>
                 )}
               </div>
               <div>
@@ -1359,12 +1460,14 @@ const ApplicationForm = () => {
                   value={formData.fieldOfStudy}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.fieldOfStudy ? 'border-red-500' : ''
+                    errors.fieldOfStudy ? "border-red-500" : ""
                   }`}
                   placeholder="Enter field of study/major"
                 />
                 {errors.fieldOfStudy && (
-                  <p className="text-red-500 text-sm mt-1">{errors.fieldOfStudy}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.fieldOfStudy}
+                  </p>
                 )}
               </div>
               <div>
@@ -1378,12 +1481,14 @@ const ApplicationForm = () => {
                   value={formData.graduationYear}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.graduationYear ? 'border-red-500' : ''
+                    errors.graduationYear ? "border-red-500" : ""
                   }`}
                   placeholder="Enter graduation year (YYYY)"
                 />
                 {errors.graduationYear && (
-                  <p className="text-red-500 text-sm mt-1">{errors.graduationYear}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.graduationYear}
+                  </p>
                 )}
               </div>
             </div>
@@ -1420,7 +1525,9 @@ const ApplicationForm = () => {
       case 4:
         return (
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary mb-4">Employment History</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">
+              Employment History
+            </h3>
             <div className="grid grid-cols-3 gap-4">
               <div>
                 <label className="block text-gray-700 mb-1">
@@ -1433,12 +1540,14 @@ const ApplicationForm = () => {
                   value={formData.companyName}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.companyName ? 'border-red-500' : ''
+                    errors.companyName ? "border-red-500" : ""
                   }`}
                   placeholder="Enter company name"
                 />
                 {errors.companyName && (
-                  <p className="text-red-500 text-sm mt-1">{errors.companyName}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.companyName}
+                  </p>
                 )}
               </div>
               <div>
@@ -1452,7 +1561,7 @@ const ApplicationForm = () => {
                   value={formData.jobTitle}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.jobTitle ? 'border-red-500' : ''
+                    errors.jobTitle ? "border-red-500" : ""
                   }`}
                   placeholder="Enter job title"
                 />
@@ -1472,11 +1581,13 @@ const ApplicationForm = () => {
                     value={formData.employmentStartDate}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                      errors.employmentStartDate ? 'border-red-500' : ''
+                      errors.employmentStartDate ? "border-red-500" : ""
                     }`}
                   />
                   {errors.employmentStartDate && (
-                    <p className="text-red-500 text-sm mt-1">{errors.employmentStartDate}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.employmentStartDate}
+                    </p>
                   )}
                 </div>
                 <div>
@@ -1490,11 +1601,13 @@ const ApplicationForm = () => {
                     value={formData.employmentEndDate}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                      errors.employmentEndDate ? 'border-red-500' : ''
+                      errors.employmentEndDate ? "border-red-500" : ""
                     }`}
                   />
                   {errors.employmentEndDate && (
-                    <p className="text-red-500 text-sm mt-1">{errors.employmentEndDate}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.employmentEndDate}
+                    </p>
                   )}
                 </div>
               </div>
@@ -1509,13 +1622,15 @@ const ApplicationForm = () => {
                 value={formData.jobResponsibilities}
                 onChange={handleInputChange}
                 className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                  errors.jobResponsibilities ? 'border-red-500' : ''
+                  errors.jobResponsibilities ? "border-red-500" : ""
                 }`}
                 placeholder="Enter job responsibilities and achievements"
                 rows={4}
               />
               {errors.jobResponsibilities && (
-                <p className="text-red-500 text-sm mt-1">{errors.jobResponsibilities}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.jobResponsibilities}
+                </p>
               )}
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -1529,7 +1644,7 @@ const ApplicationForm = () => {
                   value={formData.reasonForLeaving}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.reasonForLeaving ? 'border-red-500' : ''
+                    errors.reasonForLeaving ? "border-red-500" : ""
                   }`}
                 >
                   <option value="">Select reason</option>
@@ -1540,7 +1655,9 @@ const ApplicationForm = () => {
                   <option value="other">Others (Specify)</option>
                 </select>
                 {errors.reasonForLeaving && (
-                  <p className="text-red-500 text-sm mt-1">{errors.reasonForLeaving}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.reasonForLeaving}
+                  </p>
                 )}
               </div>
               <div>
@@ -1576,34 +1693,36 @@ const ApplicationForm = () => {
                 </label>
                 <div className="flex space-x-4">
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="contactPreviousEmployer" 
+                    <input
+                      type="radio"
+                      name="contactPreviousEmployer"
                       value="yes"
-                      checked={formData.contactPreviousEmployer === 'yes'}
+                      checked={formData.contactPreviousEmployer === "yes"}
                       onChange={handleInputChange}
                       className={`form-radio h-4 w-4 text-primary ${
-                        errors.contactPreviousEmployer ? 'border-red-500' : ''
+                        errors.contactPreviousEmployer ? "border-red-500" : ""
                       }`}
                     />
                     <span className="ml-2">Yes</span>
                   </label>
                   <label className="inline-flex items-center">
-                    <input 
-                      type="radio" 
-                      name="contactPreviousEmployer" 
+                    <input
+                      type="radio"
+                      name="contactPreviousEmployer"
                       value="no"
-                      checked={formData.contactPreviousEmployer === 'no'}
+                      checked={formData.contactPreviousEmployer === "no"}
                       onChange={handleInputChange}
                       className={`form-radio h-4 w-4 text-primary ${
-                        errors.contactPreviousEmployer ? 'border-red-500' : ''
+                        errors.contactPreviousEmployer ? "border-red-500" : ""
                       }`}
                     />
                     <span className="ml-2">No</span>
                   </label>
                 </div>
                 {errors.contactPreviousEmployer && (
-                  <p className="text-red-500 text-sm mt-1">{errors.contactPreviousEmployer}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.contactPreviousEmployer}
+                  </p>
                 )}
               </div>
             </div>
@@ -1612,8 +1731,10 @@ const ApplicationForm = () => {
       case 5:
         return (
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary mb-4">Certification and Authorization Statement</h3>
-            
+            <h3 className="text-2xl font-bold text-primary mb-4">
+              Certification and Authorization Statement
+            </h3>
+
             <div className="space-y-4">
               <div className="flex items-start space-x-2">
                 <input
@@ -1621,34 +1742,47 @@ const ApplicationForm = () => {
                   name="certificationAgreement"
                   checked={formData.certificationAgreement}
                   onChange={(e) => {
-                    setFormData(prev => ({
+                    setFormData((prev) => ({
                       ...prev,
-                      certificationAgreement: e.target.checked
+                      certificationAgreement: e.target.checked,
                     }));
-                    setErrors(prev => ({
+                    setErrors((prev) => ({
                       ...prev,
-                      certificationAgreement: ''
+                      certificationAgreement: "",
                     }));
                   }}
                   className={`mt-1 form-checkbox h-5 w-5 text-primary ${
-                    errors.certificationAgreement ? 'border-red-500' : ''
+                    errors.certificationAgreement ? "border-red-500" : ""
                   }`}
                 />
                 <label className="text-gray-700">
-                  By signing this application, I certify that the information provided is true, complete, and accurate to the best of my knowledge. I understand that any false or misleading information may result in the rejection of my application or termination of employment if hired.
+                  By signing this application, I certify that the information
+                  provided is true, complete, and accurate to the best of my
+                  knowledge. I understand that any false or misleading
+                  information may result in the rejection of my application or
+                  termination of employment if hired.
                 </label>
               </div>
               {errors.certificationAgreement && (
-                <p className="text-red-500 text-sm">{errors.certificationAgreement}</p>
+                <p className="text-red-500 text-sm">
+                  {errors.certificationAgreement}
+                </p>
               )}
 
               {formData.certificationAgreement && (
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 mt-4">
                   <p className="text-gray-700 mb-4">
-                    I authorize <u>Caring 4 You and Yours</u> to conduct a criminal background check at their discretion and verify my references. I also grant permission for former employers, educational institutions, and other relevant entities to release any necessary information regarding my qualifications and work history.
+                    I authorize <u>Caring 4 You and Yours</u> to conduct a
+                    criminal background check at their discretion and verify my
+                    references. I also grant permission for former employers,
+                    educational institutions, and other relevant entities to
+                    release any necessary information regarding my
+                    qualifications and work history.
                   </p>
                   <p className="text-gray-700">
-                    I acknowledge that this application does not constitute a contract of employment and that, if hired, my employment is subject to company policies and procedures.
+                    I acknowledge that this application does not constitute a
+                    contract of employment and that, if hired, my employment is
+                    subject to company policies and procedures.
                   </p>
                 </div>
               )}
@@ -1665,12 +1799,14 @@ const ApplicationForm = () => {
                     value={formData.applicantName}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                      errors.applicantName ? 'border-red-500' : ''
+                      errors.applicantName ? "border-red-500" : ""
                     }`}
                     placeholder="Enter your full name"
                   />
                   {errors.applicantName && (
-                    <p className="text-red-500 text-sm mt-1">{errors.applicantName}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.applicantName}
+                    </p>
                   )}
                 </div>
                 <div className="col-span-2">
@@ -1682,7 +1818,8 @@ const ApplicationForm = () => {
                     <SignaturePad
                       ref={signaturePadRef}
                       canvasProps={{
-                        className: 'w-full h-32 border rounded cursor-crosshair'
+                        className:
+                          "w-full h-32 border rounded cursor-crosshair",
                       }}
                     />
                     <div className="flex justify-end space-x-2 mt-2">
@@ -1703,7 +1840,9 @@ const ApplicationForm = () => {
                     </div>
                   </div>
                   {errors.applicantSignature && (
-                    <p className="text-red-500 text-sm mt-1">{errors.applicantSignature}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.applicantSignature}
+                    </p>
                   )}
                 </div>
                 <div>
@@ -1717,11 +1856,13 @@ const ApplicationForm = () => {
                     value={formData.signatureDate}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                      errors.signatureDate ? 'border-red-500' : ''
+                      errors.signatureDate ? "border-red-500" : ""
                     }`}
                   />
                   {errors.signatureDate && (
-                    <p className="text-red-500 text-sm mt-1">{errors.signatureDate}</p>
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.signatureDate}
+                    </p>
                   )}
                 </div>
               </div>
@@ -1736,10 +1877,12 @@ const ApplicationForm = () => {
                   accept=".pdf,.doc,.docx"
                   onChange={handleFileChange}
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${
-                    errors.cvFile ? 'border-red-500' : ''
+                    errors.cvFile ? "border-red-500" : ""
                   }`}
                 />
-                <p className="text-sm text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX</p>
+                <p className="text-sm text-gray-500 mt-1">
+                  Accepted formats: PDF, DOC, DOCX
+                </p>
                 {errors.cvFile && (
                   <p className="text-red-500 text-sm mt-1">{errors.cvFile}</p>
                 )}
@@ -1753,19 +1896,22 @@ const ApplicationForm = () => {
   };
 
   return (
-    <section className="py-16 bg-light">
+    <section className="py-16 bg-light pt-[120px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {showSuccess ? (
           <div className="bg-white shadow-lg rounded-lg p-8 text-center">
             <div className="text-green-600 text-5xl mb-4">✓</div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">Thank you for applying!</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Thank you for applying!
+            </h3>
             <p className="text-gray-600">
-              Your application has been successfully submitted. Our team will review your details and get back to you soon.
+              Your application has been successfully submitted. Our team will
+              review your details and get back to you soon.
             </p>
           </div>
         ) : (
           <>
-            <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            <h2 className="text-4xl font-bold text-center mb-12">
               Application Form
             </h2>
             {/* Progress Bar */}
@@ -1796,12 +1942,14 @@ const ApplicationForm = () => {
                   )}
                   <button
                     type="button"
-                    onClick={currentStep === totalSteps ? handleSubmit : nextStep}
+                    onClick={
+                      currentStep === totalSteps ? handleSubmit : nextStep
+                    }
                     disabled={isSubmitting}
                     className={`${
-                      currentStep === totalSteps ? 'bg-green-600' : 'bg-primary'
+                      currentStep === totalSteps ? "bg-green-600" : "bg-primary"
                     } text-white px-6 py-2 rounded-lg hover:bg-secondary transition duration-300 ${
-                      currentStep === 1 ? 'ml-auto' : ''
+                      currentStep === 1 ? "ml-auto" : ""
                     } relative`}
                   >
                     {isSubmitting ? (
@@ -1811,8 +1959,10 @@ const ApplicationForm = () => {
                           <div className="w-5 h-5 border-t-2 border-white border-solid rounded-full animate-spin"></div>
                         </div>
                       </>
+                    ) : currentStep === totalSteps ? (
+                      "Submit"
                     ) : (
-                      currentStep === totalSteps ? 'Submit' : 'Next'
+                      "Next"
                     )}
                   </button>
                 </div>
@@ -1825,4 +1975,4 @@ const ApplicationForm = () => {
   );
 };
 
-export default ApplicationForm; 
+export default ApplicationForm;
